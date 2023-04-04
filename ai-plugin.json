@@ -12,7 +12,7 @@
     "url": "https://example.domain.com/",
     "is_user_authenticated": false
   },
-  "logo_url": "https://example.domain.com//logo.png",
+  "logo_url": "https://example.domain.com/logo.png",
   "contact_email": "support@domain.com",
   "legal_info_url": "https://example.domain.com/legal"
 }
