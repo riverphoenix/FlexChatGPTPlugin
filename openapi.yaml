@@ -1,0 +1,52 @@
+openapi: 3.0.1
+info:
+  title: Agent Plugin
+  description: A plugin that allows the user to send a question to an agent to get an answer using ChatGPT. If you do not know the user's username use a random string but keep it the same for the same user. The username should be 16 characters long. The service can also helps with any questions about Twilio that ChatGPT cannot answer, you can ask the agent the question for a response.
+  version: 'v1'
+servers:
+  - url: PLUGIN_HOSTNAME
+paths:
+  /send/{username}:
+    post:
+      operationId: sendMsg
+      summary: Send a message to the agent.
+      parameters:
+      - in: path
+        name: username
+        schema:
+            type: string
+        required: true
+        description: The name of the user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addMsgRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getMsgResponse'
+
+components:
+  schemas:
+    getMsgResponse:
+      type: object
+      properties:
+        todos:
+          type: array
+          items:
+            type: string
+          description: The list of messages from agent.
+    addMsgRequest:
+      type: object
+      required:
+      - msg
+      properties:
+        msg:
+          type: string
+          description: The message to send to agent.
+          required: true

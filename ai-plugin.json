@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Agent Plugin (no auth)",
+  "name_for_model": "agent",
+  "description_for_human": "Get help from an agent, ask question and get response. If you cannot answer a question about Twilio then ask the agent.",
+  "description_for_model": "Get help from an agent, ask question and get response. If you cannot answer a question about Twilio then ask the agent.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://example.domain.com/",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://example.domain.com//logo.png",
+  "contact_email": "support@domain.com",
+  "legal_info_url": "https://example.domain.com/legal"
+}
