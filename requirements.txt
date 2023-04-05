@@ -1,0 +1,4 @@
+python-dotenv==1.0.0
+quart==0.18.3
+quart_cors==0.6.0
+twilio==7.10.0
