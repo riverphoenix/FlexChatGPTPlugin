@@ -1,6 +1,7 @@
 import json
 import os, sys
 from twilio.rest import Client
+from dotenv import load_dotenv
 import sqlite3
 import hashlib
 import time
@@ -9,12 +10,13 @@ import quart
 import quart_cors
 from quart import request
 
+load_dotenv()
+
 # required for all twilio access tokens
-# To set up environmental variables, see http://twil.io/secure
-account_sid = 'ACxxxxxxxxxxxxxxxxxxxx'
-auth_token = 'xxxxxxxxxxxxxxxxxxxx'
-conv_flow ='FWxxxxxxxxxxxxxxxxxxxx'
-hostname = 'https://example.domain.com/'
+account_sid = os.getenv('ACCOUNT_SID')
+auth_token = os.getenv('AUTH_TOKEN')
+conv_flow = os.getenv('CONV_FLOW')
+hostname = os.getenv('HOSTNAME')
 
 # Note: Setting CORS to allow chat.openapi.com is required for ChatGPT to access your plugin
 app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.com")
