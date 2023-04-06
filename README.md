@@ -14,6 +14,9 @@ Before you start, ensure that you configure your environment variables in the .e
 You’ll need to also change the 'example.domain.com' url to the hostname you will proxy the running server behind in 'ai-plugin.json'
 
 ## Execute
+
 pip install -r requirements.txt
+
 python main.py &
+
 ngrok http 5002
